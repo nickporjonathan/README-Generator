@@ -27,11 +27,17 @@ function genLicense(license) {
   }
 }
 
-// TODO: Create a function that returns the license link
+// TODO: Create a function that generates image
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function generateImage(image, alt, name) {
+  if (image === true) {
+    return `![${alt}](assts/images/${name})`;
+  } else {
+    return "";
+  }
+}
 
-// TODO: Create a function that returns the license section of README
+// TODO: Create a function that returns the collaborators
 // If there is no license, return an empty string
 function renderLicenseSection(license) {}
 
