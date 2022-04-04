@@ -39,7 +39,18 @@ function generateImage(image, alt, name) {
 
 // TODO: Create a function that returns the collaborators
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function generateCredits(credit, name, github) {
+  if (credit) {
+    let collab = `
+    Collaborators: 
+    Name: ${name} 
+    Github: https://github.com/${github}
+    `;
+    return collab;
+  } else {
+    return "no more contributors";
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
