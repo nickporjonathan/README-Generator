@@ -1,6 +1,6 @@
 // TODO: Create a function that returns a license badge & link based on which license is passed in
 // If there is no license, return an empty string
-function genLicense(license) {
+function generateLicense(license) {
   let badge = "";
   if (license === "AGPL v3") {
     badge =
@@ -54,8 +54,61 @@ function generateCredits(credit, name, github) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `
+  # ${data.title}
+  ${generateLicense(data.license)}
 
+  ## Table of Contents:
+
+  ---
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Credits](#credits)
+  * [Tests](#tests)
+  * [Questions](#questions)
+  
+  ## Description 
+
+  ---
+  ${data.description}
+
+  ## Installation
+
+  ---
+  To install all necessary dependecies for this program, open the console and run the following command:
+  \`\`\`${data.installation}\`\`\`
+
+  ## Usage
+
+  ---
+  ${data.usage}
+  ${generateImage(data.confirmImage, data.imageAlt, data.imageName)}
+
+  ## Credits
+
+  ---
+  ${generateCredits(data.confirmCredit, data.creditName, data.creditGithub)}
+
+  ### Third Party Assets:
+  ${data.assets}
+
+  ### Third Part Documents / Contribution:
+  ${data.contribution}
+
+  ## Tests
+
+  ---
+  To test this program run this command in the console:
+  \`\`\`${data.tests}\`\`\`
+
+  ## Questions
+
+  ---
+  Have questions or concerns? Reach out to us:
+
+  Email: ${data.email}
+  Github: https://github.com${data.github}
 `;
 }
 
